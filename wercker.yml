@@ -64,7 +64,7 @@ deploy:
        cmd: /learngo/source/hello
        port: "8080"
        tag: latest
-       repository: hello/book-hello
+       repository: yinglei/book-hello
        registry: https://registry.hub.docker.com
 
    - cng/cf-deploy:
