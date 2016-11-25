@@ -61,7 +61,7 @@ deploy:
    - internal/docker-push:
        username: $DOCKER_USERNAME
        password: $DOCKER_PASSWORD
-       cmd: /learngo/source/hello
+       cmd: /pipeline/source/hello
        port: "8080"
        tag: latest
        repository: yinglei/book-hello
