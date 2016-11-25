@@ -3,8 +3,7 @@ box: golang
 dev:
   steps:
     - setup-go-workspace:
-        package-dir: github.com/cloudnativego/hello
-
+        package-dir: github.com/raiei/learngo
     - script:
         name: env
         code: env
@@ -25,8 +24,7 @@ dev:
 build:
   steps:
     - setup-go-workspace:
-        package-dir: github.com/cloudnativego/hello
-
+        package-dir: github.com/raiei/learngo
     - script:
         name: env
         code: env
@@ -63,10 +61,10 @@ deploy:
    - internal/docker-push:
        username: $DOCKER_USERNAME
        password: $DOCKER_PASSWORD
-       cmd: /pipeline/source/hello
+       cmd: /learngo/source/hello
        port: "8080"
        tag: latest
-       repository: cloudnativego/book-hello
+       repository: hello/book-hello
        registry: https://registry.hub.docker.com
 
    - cng/cf-deploy:
@@ -76,4 +74,4 @@ deploy:
        org: $ORG
        space: $SPACE
        appname: wercker-step-hello
-       docker_image: cloudnativego/book-hello
+       docker_image: yinglei/book-hello
